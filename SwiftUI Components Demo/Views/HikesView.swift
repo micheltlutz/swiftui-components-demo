@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HikesView.swift
 //  SwiftUI Components Demo
 //
 //  Created by Michel Teixeira on 22/10/19.
@@ -8,17 +8,19 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct HikesView: View {
+    let hikes = Hike.all()
+
     var body: some View {
-        VStack {
-            Stacks()
-            HikesView()
+        List(hikes) { hike in
+            Text(hike.name)
+
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HikesView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HikesView()
     }
 }
