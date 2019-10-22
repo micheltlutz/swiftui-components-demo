@@ -12,7 +12,26 @@ struct HikesView: View {
     let hikes = Hike.all()
 
     var body: some View {
-        List(hikes) { hike in
+        NavigationView {
+            List(hikes) { hike in
+                HikeCell(hike: hike)
+            }
+        .navigationBarTitle(Text("Hikings"))
+        }
+    }
+}
+
+struct HikesView_Previews: PreviewProvider {
+    static var previews: some View {
+        HikesView()
+    }
+}
+
+struct HikeCell: View {
+    let hike: Hike
+
+    var body: some View {
+        return NavigationLink(destination: Text(hike.name)) {
             HStack {
                 Image(hike.imageURL)
                     .resizable()
@@ -25,11 +44,5 @@ struct HikesView: View {
                 }
             }
         }
-    }
-}
-
-struct HikesView_Previews: PreviewProvider {
-    static var previews: some View {
-        HikesView()
     }
 }

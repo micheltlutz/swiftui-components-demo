@@ -10,9 +10,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Stacks()
-            HikesView()
+        NavigationView {
+            VStack {
+                Stacks()
+                HikesView()
+            }
+        .navigationBarTitle(Text("Hikings"))
         }
     }
 }
