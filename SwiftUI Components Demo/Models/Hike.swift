@@ -17,11 +17,12 @@ struct Hike: Identifiable {
 }
 
 extension Hike {
+    // Images from https://cadeodrone.com.br
     static func all() -> [Hike] {
         return [
-            Hike(name: "Hike1", imageURL: "img", miles: 10),
-            Hike(name: "Hike2", imageURL: "img", miles: 10),
-            Hike(name: "Hike3", imageURL: "img", miles: 2),
+            Hike(name: "Hike1", imageURL: "img-10", miles: 10),
+            Hike(name: "Hike2", imageURL: "img-12", miles: 10),
+            Hike(name: "Hike3", imageURL: "img-13", miles: 2),
         ]
     }
 }
